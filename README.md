@@ -6,7 +6,7 @@ Statix a lightweight, zero dependencies, written on clean JS library to create a
 🟥 **Performance**: Improve DOM patching Algorithm.\
 🟥 **Performance**: Improve DOM rendering (`data-statix-id`).\
 🟥 **Other**: Write Unit tests.\
-🟥 **Other**: Improve Documentation.\
+🟥 **Other**: Improve Documentation.
 
 ## API Documentation
 The core of Statix library consists of 5 classes, 2 of them are some support classes (errors and context) and other 3 are core classes.
@@ -184,7 +184,7 @@ fragment().childs("Text", tag("p").text("Hello World"));
 ### `StatixSignal`
 This class is responsible for reactivity in this library.
 
-`getter value` - returns current state value.\
+`getter value` - returns current state value.
 ```js
 import statix from "statix.js";
 
@@ -192,7 +192,7 @@ export default statix.create({
 	init: function(statix, views, signals) {
 		statix.action("click", ["func_1"]);
 	
-	signals.signal_1.subscribe({ func_1: views.func_1 });
+		signals.signal_1.subscribe({ func_1: views.func_1 });
 	},
 	views: {
 		render: function(_, signals) {/* rendering... */},
@@ -207,8 +207,7 @@ export default statix.create({
 	}
 });
 ```
-`setter value` - set new value and trigger the executions for all subscribers.\
-`subscribe` - subscribe all provided functions from `views` to the signal, immediately invoke the subscriber.\
+`setter value` - set new value and trigger the executions for all subscribers.
 ```js
 import statix from "statix.js";
 
@@ -216,7 +215,7 @@ export default statix.create({
 	init: function(statix, views, signals) {
 		statix.action("click", ["func_1"]);
 	
-	signals.signal_1.subscribe({ func_1: views.func_1 });
+		signals.signal_1.subscribe({ func_1: views.func_1 });
 	},
 	views: {
 		render: function(_, signals) {/* rendering... */},
@@ -233,7 +232,28 @@ export default statix.create({
 	}
 });
 ```
-`unsubscribe` - unsubscribe all provided functions.\
+`subscribe` - subscribe all provided functions from `views` to the signal, immediately invoke the subscriber.
+```js
+import statix from "statix.js";
+
+export default statix.create({
+	init: function(statix, views, signals) {
+		statix.action("click", ["func_1"]);
+	
+		signals.signal_1.subscribe({ func_1: views.func_1 });
+	},
+	views: {
+		render: function(_, signals) {/* rendering... */},
+	actions: {
+		func_1: function(statix, signals, event) {},
+		func_2: function(statix, signals, event) {}
+	},
+	signals: {
+		signal_1: statix.signal(0)
+	}
+});
+```
+`unsubscribe` - unsubscribe all provided functions.
 ```js
 import statix from "statix.js";
 
