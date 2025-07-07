@@ -3,9 +3,9 @@ Statix a lightweight, zero dependencies, written on clean JS, library to give a 
 
 ## Todos
 🟥 **Functionality**: Implement a effect functionality for `StatixSignal`.\
-🟥 **Performance**: Write custom Myers Diff Algorithm for DOM Patching.\
+🟥 **Performance**: Improve DOM Patching.\
 🟥 **Other**: Write Unit tests.\
-🟥 **Other**: Improve Documentation.
+🟥 **Other**: Improve Documentation.\
 🟥 **Other**: Fix ts-ignore hell.
 
 ## API Documentation
